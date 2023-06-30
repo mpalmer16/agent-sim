@@ -1,0 +1,7 @@
+[workspace]
+members = [
+    "agent-lib",
+    "agent-cli",
+    "agent-behavior",
+    "agent-world"
+]

@@ -1,0 +1,10 @@
+[package]
+name = "agent-world"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+rand = "0.8.5"
+uuid = { version = "1.4.0", features = ["v4"] }
+"agent-lib" = { path = "../agent-lib" }
+"agent-behavior" = { path = "../agent-behavior" }

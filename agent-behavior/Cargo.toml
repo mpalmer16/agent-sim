@@ -1,0 +1,7 @@
+[package]
+name = "agent-behavior"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+"agent-lib" = { path = "../agent-lib" }
