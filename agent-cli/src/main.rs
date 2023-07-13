@@ -1,23 +1,24 @@
 use std::{thread, time::Duration};
 
-use agent_behavior::{normal::NormalBehavior, still::StillBehavior};
+use agent_behavior::{normal::NormalBehavior, agressive::AgressiveBehavior};
 use agent_world::World;
 
 
 fn main() {
-    let mut active_world = World::fill(100, NormalBehavior);
-    let mut still_world = World::fill(100, StillBehavior);
 
-    let mut n = 20;
+    let mut active_world = World::fill(100, Box::new(NormalBehavior));
+    let mut agressive_world = World::fill(100, Box::new(AgressiveBehavior));
+
+    let mut n = 200;
     while n > 0 {
         clear_console();
 
         println!("{}", active_world);
         println!();
-        println!("{}", still_world);
+        println!("{}", agressive_world);
 
         active_world.tick();
-        still_world.tick();
+        agressive_world.tick();
 
         thread::sleep(Duration::from_millis(100));
         n -= 1;

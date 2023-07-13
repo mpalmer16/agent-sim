@@ -14,11 +14,11 @@ const WORLD_SIZE: usize = 25;
 pub struct World<T> {
     locations: HashMap<Uuid, Position>,
     agents: HashMap<Uuid, Agent>,
-    behavior: T,
+    behavior: Box<T>,
 }
 
 impl <T: Behavior + Clone> World<T>{
-    pub fn fill(agent_count: usize, behavior: T) -> Self {
+    pub fn fill(agent_count: usize, behavior: Box<T>) -> Self {
         let mut rng = rand::thread_rng();
         let mut locations = HashMap::new();
         let mut agents = HashMap::new();
